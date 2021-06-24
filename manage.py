@@ -3,6 +3,10 @@
 import os
 import sys
 
+from celery import Celery
+from celery import task  
+
+celery = Celery('tasks', broker='amqp://guest@localhost//') #!
 
 def main():
     """Run administrative tasks."""
